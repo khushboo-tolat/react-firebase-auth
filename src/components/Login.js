@@ -32,11 +32,11 @@ function Login() {
 
     return (
         <>
-        <Card>
+            <Card>
             <Card.Body>
-            <h2 className="text-center mb-4">Log In</h2>
-            {error && <Alert variant="danger">{error}</Alert>}
-            <Form onSubmit={handleSubmit}>
+                <h2 className="text-center mb-4">Log In</h2>
+                {error && <Alert variant="danger">{error}</Alert>}
+                <Form onSubmit={handleSubmit}>
                 <Form.Group id="email">
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" ref={emailRef} required />
@@ -48,12 +48,15 @@ function Login() {
                 <Button disabled={loading} className="mt-4 w-100" type="submit">
                     Log In
                 </Button>
-            </Form>
+                </Form>
+                <div className="w-100 text-center mt-2">
+                    <Link to={"/forgot-password"} style={{ textDecoration: "none" }}>Forgot Password?</Link>
+                </div>
             </Card.Body>
-        </Card>
-        <div style={{ textAlign: "center" }}>
-                Don't have an account? <Link to={"/signup"}>Sign Up</Link>
-        </div>
+            </Card>
+            <div className="w-100 text-center mt-2">
+                Don't have an account? <Link to={"/signup"} style={{ textDecoration: "none" }}>Sign Up</Link>
+            </div>
         </>
     );
 }
