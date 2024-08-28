@@ -14,7 +14,8 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault();
 
-        if (passwordRef.current.value) {
+        if (passwordRef.current.value.length < 6) {
+            return setError('Password length should be greater than 6.');
         }
 
         try {

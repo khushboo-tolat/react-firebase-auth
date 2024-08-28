@@ -19,7 +19,9 @@ function UpdateProfile() {
             return setError('Password do not match.');
         }
 
-        if (passwordRef.current.value) { }
+        if (passwordRef.current.value.length < 6) {
+            return setError('Password length should be greater than 6.');
+        }
         
         const promises = [];
         setError('');
